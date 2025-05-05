@@ -3,12 +3,12 @@ import ogImageSrc from "@images/social.png";
 
 
 export const SITE = {
-  title: "ScrewFast",
+  title: "しまリンapps",
   tagline: "Top-quality Hardware Tools",
-  description: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.",
-  description_short: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
-  url: "https://screwfast.uk",
-  author: "Emil Gulamov",
+  description: "しまリンappsは「未だこの世にないものを形に」というスローガンの下、「なんだこれ？新しい！」と思っていただけるような製品を作ることを目指しています。",
+  description_short: "しまリンappsは、「なんだこれ？新しい！」と思っていただけるような製品を作ることを目指しています。",
+  url: "https://shimarinapps.com",
+  author: "Koki Inoue",
 };
 
 export const SEO = {
@@ -17,7 +17,7 @@ export const SEO = {
   structuredData: {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    inLanguage: "en-US",
+    inLanguage: "ja-JP",
     "@id": SITE.url,
     url: SITE.url,
     name: SITE.title,

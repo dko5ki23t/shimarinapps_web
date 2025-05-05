@@ -1,9 +1,9 @@
 // An array of links for navigation bar
 const navBarLinks = [
-  { name: "ホーム", url: "/" },
-  { name: "アプリ", url: "/apps" },
-  { name: "ブログ", url: "/blog" },
-  { name: "プライバシーポリシー", url: "/privacy-policy" },
+  { name: "Home", url: "/" },
+  { name: "Apps", url: "/apps" },
+  { name: "Blog", url: "/blog" },
+  { name: "Privacy Policy", url: "/privacy-policy" },
 ];
 // An array of links for footer
 const footerLinks = [

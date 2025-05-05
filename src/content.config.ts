@@ -78,6 +78,16 @@ const blogCollection = defineCollection({
   }),
 });
 
+const ppCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/privacy-policy" }),
+  schema: ({ image }) => z.object ({
+  title: z.string(),
+  description: z.string(),
+  author: z.string(),
+  pubDate: z.date(),
+  }),
+});
+
 const insightsCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/insights" }),
   schema: ({ image }) => z.object ({
@@ -94,4 +104,5 @@ export const collections = {
   'products': productsCollection,
   'blog': blogCollection,
   'insights': insightsCollection,
+  'privacy-policy': ppCollection,
 };
