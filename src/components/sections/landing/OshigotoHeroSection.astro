@@ -1,0 +1,112 @@
+---
+// Import the necessary dependencies
+import { Image } from "astro:assets";
+import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
+
+// Define props from Astro
+const {
+  title,
+  subTitle,
+  withReview,
+  avatars,
+  starCount,
+  rating,
+  reviews,
+  src,
+  alt,
+} = Astro.props;
+
+// Define TypeScript interface for props
+interface Props {
+  title?: string;
+  subTitle?: string;
+  withReview?: boolean;
+  avatars?: Array<string>;
+  starCount?: number;
+  rating?: string;
+  reviews?: string;
+  src?: any;
+  alt?: string;
+}
+---
+
+<!-- Defining a grid container that holds all the content -->
+<section
+  class="mx-auto grid max-w-[85rem] gap-4 px-4 py-14 sm:px-6 md:grid-rows-2 md:justify-items-center md:gap-8 lg:px-8 2xl:max-w-full text-center"
+>
+  <!-- アプリタイトルロゴ -->
+  <div class="flex w-full justify-center">
+    <div class="top-12 overflow-hidden">
+      {
+        src && alt && (
+          <Image
+            src={src}
+            alt={alt}
+            class="h-full w-full scale-110 object-cover object-center"
+            draggable={"false"}
+            loading={"eager"}
+            format={"avif"}
+          />
+        )
+      }
+    </div>
+  </div>
+  <!-- Title and description -->
+  <div>
+    <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
+    {
+      title && (
+      <h1
+      class="block text-3xl font-bold tracking-tight text-balance text-neutral-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-neutral-200"
+    >
+      <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
+      <Fragment set:html={title} />
+    </h1> 
+      )
+  }
+    {
+      subTitle && (
+        <p class="mt-3 text-lg leading-relaxed text-pretty text-neutral-700 lg:w-4/5 dark:text-neutral-400">
+          {subTitle}
+        </p>
+      )
+    }
+    <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
+    <div class="mt-7 grid w-full gap-3 sm:inline-flex">
+      <a
+        href="https://apps.apple.com/jp/app/%E6%8A%BC%E3%81%97%E3%81%94%E3%81%A8/id6743694606?itscg=30200&itsct=apps_box_badge&mttnsubad=6743694606"
+        style="display: inline-block;"
+      >
+        <img
+          src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/ja-jp?releaseDate=1742774400"
+          alt="App Storeでダウンロード"
+          style="width: 224px; height: 82px; vertical-align: middle; object-fit: contain;"
+        />
+      </a>
+
+      <a
+        href="https://play.google.com/store/apps/details?id=com.shimarinapps.oshigoto&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+        style="display: inline-block;"
+        ><img
+          alt="Google Play で手に入れよう"
+          src="https://play.google.com/intl/en_us/badges/static/images/badges/ja_badge_web_generic.png"
+          style="height: 82px; object-fit: contain; vertical-align: middle;"
+        /></a
+      >
+    </div>
+
+    <!-- Review Section: This section presents avatars, review ratings and the number of reviews -->
+    {
+      withReview ? (
+        <ReviewComponent
+          avatars={avatars}
+          starCount={starCount}
+          rating={rating}
+          reviews={reviews}
+        />
+      ) : (
+        ""
+      )
+    }
+  </div>
+</section>
