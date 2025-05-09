@@ -12,32 +12,33 @@ import feature4 from "@images/apps/ScreenShot4.png";
 import { SITE } from "@data/constants";
 
 // Define variables for page content
-const pageTitle: string = `押しごと | ${SITE.title}`;
+const pageTitle: string = `Oshigoto | ${SITE.title}`;
 ---
 
 <OshigotoLayout
-  lang="ja"
+  lang="en"
   title={pageTitle}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": "https://shimarinapps.com/apps/oshigoto",
     url: "https://shimarinapps.com/apps/oshigoto",
-    name: "押しごと | しまリンapps",
-    description: "箱押し＋マージゲームアプリ",
+    name: "Oshigoto | Shimarin apps",
+    description: "Box Push + Merge game app",
     isPartOf: {
       "@type": "WebSite",
       url: "https://shimarinapps.com/apps/oshigoto",
-      name: "押しごと | しまリンapps",
-      description: "箱押し＋マージゲームアプリ",
+      name: "Oshigoto | Shimarin apps",
+      description: "Box Push + Merge game app",
     },
-    inLanguage: "ja-JP",
+    inLanguage: "en-US",
   }}
 >
   <OshigotoHeroSection
     withReview={false}
     src={titleLogo}
-    alt="「押しごと」タイトルロゴ"
+    alt='"Oshigoto" title logo'
+    '
   />
   <div class="my-8 flex items-center justify-center">
     <div class="aspect-w-16 aspect-h-9 w-full max-w-[560px]">
@@ -45,42 +46,41 @@ const pageTitle: string = `押しごと | ${SITE.title}`;
     </div>
   </div>
   <FeaturesNavs
-    title=`新感覚！箱押し＋マージゲーム`
+    title=`A new sensation! Box Push + Merge game`
     tabs={[
       {
-        heading:
-          "ステージ上のアイテムを押して同じアイテム同士をマージさせよう。",
+        heading: "Push items on the stage to merge identical items together.",
         content:
-          "マージで周囲の敵を倒したり壁を壊して先へ進もう！ 様々な能力・アイテムを駆使してどこかにいる女の子を助けだせ！",
+          "Use merge to defeat surrounding enemies and break walls to move forward! Use various abilities and items to rescue the girl who is somewhere!",
         svg: "dashboard",
         src: feature1,
-        alt: "スクリーンショット1",
+        alt: "Screenshot 1",
         first: true,
       },
       {
-        heading: "ゲームシステム",
+        heading: "Game System",
         content:
-          "プレイヤーの1移動が1ターンとなり、他のあらゆる敵やアイテムの動きもこの1ターン間に行われる。時間を気にせずじっくり考えてプレイすることが可能だ。",
+          "One player movement takes 1 turn, and all other enemy and item movements also occur during this 1 turn. You can play carefully and think carefully without worrying about time.",
         svg: "puzzle",
         src: feature2,
-        alt: "スクリーンショット2",
+        alt: "Screenshot 2",
         second: true,
       },
       {
-        heading: "シンプルな操作",
+        heading: "Simple Operations",
         content:
-          "基本操作はタテ・ヨコ・（ナナメ）の移動のみ！また、操作ボタンは複数の種類から選んで設定できる。",
+          "The basic operations are just vertical, horizontal, and diagonal movement! You can also choose from multiple types of control buttons to set.",
         svg: "guides",
         src: feature3,
-        alt: "スクリーンショット3",
+        alt: "Screenshot 3",
       },
       {
-        heading: "やりこみ要素",
+        heading: "Additional Features",
         content:
-          "女の子を助けるという目的以外に、高スコアを目指したり、様々な実績をクリアしてみよう！",
+          "Besides the goal of rescuing the girl, try to get a high score and complete various achievements!",
         svg: "rocket",
         src: feature4,
-        alt: "スクリーンショット4",
+        alt: "Screenshot 4",
       },
     ]}
   />

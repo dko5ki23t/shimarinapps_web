@@ -73,7 +73,20 @@ interface Props {
     }
     <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
     <div class="mt-7 grid w-full gap-3 sm:inline-flex">
-      <a
+    {
+      Astro.currentLocale === "en" ? (
+      
+    <a 
+      href="https://apps.apple.com/us/app/oshigoto/id6743694606?itscg=30200&itsct=apps_box_badge&mttnsubad=6743694606"
+      style="display: inline-block;">
+        <img 
+        src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1742774400"
+        alt="Download on the App Store" 
+        style="width: 246px; height: 82px; vertical-align: middle; object-fit: contain;" />
+    </a>
+      )
+    : (
+    <a
         href="https://apps.apple.com/jp/app/%E6%8A%BC%E3%81%97%E3%81%94%E3%81%A8/id6743694606?itscg=30200&itsct=apps_box_badge&mttnsubad=6743694606"
         style="display: inline-block;"
       >
@@ -83,7 +96,20 @@ interface Props {
           style="width: 224px; height: 82px; vertical-align: middle; object-fit: contain;"
         />
       </a>
-
+      )
+      }
+      
+      {
+        Astro.currentLocale === "en" ? (
+        <a
+          href='https://play.google.com/store/apps/details?id=com.shimarinapps.oshigoto&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+          style="display: inline-block;">
+            <img 
+              alt='Get it on Google Play'
+              src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'
+              style="height: 82px; object-fit: contain; vertical-align: middle;"/></a>
+      ) 
+      : (
       <a
         href="https://play.google.com/store/apps/details?id=com.shimarinapps.oshigoto&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
         style="display: inline-block;"
@@ -91,8 +117,9 @@ interface Props {
           alt="Google Play で手に入れよう"
           src="https://play.google.com/intl/en_us/badges/static/images/badges/ja_badge_web_generic.png"
           style="height: 82px; object-fit: contain; vertical-align: middle;"
-        /></a
-      >
+        /></a>
+        ) 
+        }
     </div>
 
     <!-- Review Section: This section presents avatars, review ratings and the number of reviews -->
