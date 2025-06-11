@@ -1,0 +1,88 @@
+---
+// Import the necessary components
+import OshigotoHeroSection from "@/components/sections/landing/OshigotoHeroSection.astro";
+import OshigotoLayout from "@/layouts/OshigotoLayout.astro";
+import { YouTube } from "astro-embed";
+import titleLogo from "@images/apps/title_logo.png";
+import FeaturesNavs from "@/components/sections/features/FeaturesNavs.astro";
+import feature1 from "@images/apps/ScreenShot1.png";
+import feature2 from "@images/apps/ScreenShot2.png";
+import feature3 from "@images/apps/ScreenShot3.png";
+import feature4 from "@images/apps/ScreenShot4.png";
+import { SITE } from "@data/constants";
+
+// Define variables for page content
+const pageTitle: string = `ピンシェア | ${SITE.title}`;
+---
+
+<!-- ダミーページ -->
+<OshigotoLayout
+  lang="ja"
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://shimarinapps.com/apps/oshigoto",
+    url: "https://shimarinapps.com/apps/oshigoto",
+    name: "押しごと | しまリンapps",
+    description: "箱押し＋マージゲームアプリ",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://shimarinapps.com/apps/oshigoto",
+      name: "押しごと | しまリンapps",
+      description: "箱押し＋マージゲームアプリ",
+    },
+    inLanguage: "ja-JP",
+  }}
+>
+  <OshigotoHeroSection
+    withReview={false}
+    src={titleLogo}
+    alt="「押しごと」タイトルロゴ"
+  />
+  <div class="my-8 flex items-center justify-center">
+    <div class="aspect-w-16 aspect-h-9 w-full max-w-[560px]">
+      <YouTube id="f9-VBLEldL0" />
+    </div>
+  </div>
+  <FeaturesNavs
+    title=`新感覚！箱押し＋マージゲーム`
+    tabs={[
+      {
+        heading:
+          "ステージ上のアイテムを押して同じアイテム同士をマージさせよう。",
+        content:
+          "マージで周囲の敵を倒したり壁を壊して先へ進もう！ 様々な能力・アイテムを駆使してどこかにいる女の子を助けだせ！",
+        svg: "dashboard",
+        src: feature1,
+        alt: "スクリーンショット1",
+        first: true,
+      },
+      {
+        heading: "ゲームシステム",
+        content:
+          "プレイヤーの1移動が1ターンとなり、他のあらゆる敵やアイテムの動きもこの1ターン間に行われる。時間を気にせずじっくり考えてプレイすることが可能だ。",
+        svg: "puzzle",
+        src: feature2,
+        alt: "スクリーンショット2",
+        second: true,
+      },
+      {
+        heading: "シンプルな操作",
+        content:
+          "基本操作はタテ・ヨコ・（ナナメ）の移動のみ！また、操作ボタンは複数の種類から選んで設定できる。",
+        svg: "guides",
+        src: feature3,
+        alt: "スクリーンショット3",
+      },
+      {
+        heading: "やりこみ要素",
+        content:
+          "女の子を助けるという目的以外に、高スコアを目指したり、様々な実績をクリアしてみよう！",
+        svg: "rocket",
+        src: feature4,
+        alt: "スクリーンショット4",
+      },
+    ]}
+  />
+</OshigotoLayout>
